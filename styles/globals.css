@@ -1,3 +1,57 @@
-@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap');
+
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Merriweather';
+  font-style: bold;
+  font-size: 62.5%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  box-shadow: 0 4px 6px 3px rgba(22, 21, 21, 0.247);
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  transition: all 0.2s;
+}
+
+.flex img {
+  width: 200px;
+  height: 100px;
+  margin: 1rem;
+}
+
+.flex .container {
+  background-color: #d3d3d3;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.flex h2,
+.flex h3 {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.flex:hover {
+  transform: translateY(-2px) scale(1.03);
+}
