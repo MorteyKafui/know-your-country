@@ -1,12 +1,18 @@
 import Countries from '../components/Countries';
 import Layout from '../components/Layout';
+import Search from '../components/Search';
 
 export default function HomePage({ countries }) {
-  console.log(countries);
+  const serachCountry = async (text) => {
+    const res = await fetch('https://restcountries.eu/rest/v2/all');
+
+    const data = await res.json();
+  };
   return (
     <Layout title='KYC | Home'>
       <div className='container'>
-        <h1 className='text-5xl'>Countries In The World</h1>
+        <h1 className='title'>Countries In The World</h1>
+        <Search searchCountry={serachCountry} />
         <div className='grid'>
           {countries.map((el) => (
             <Countries

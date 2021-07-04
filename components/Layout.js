@@ -26,6 +26,9 @@ export default function Layout({ children, title, description }) {
         </nav>
       </header>
       <main className='container'>{children}</main>
+      <footer>
+        <p>KYC &copy; {new Date().getFullYear()}</p>
+      </footer>
     </>
   );
 }
