@@ -38,7 +38,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      countries: data.slice(0, 12),
+      countries: data.slice(0, 21),
     },
     revalidate: 60,
   };
