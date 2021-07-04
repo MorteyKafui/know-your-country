@@ -1,24 +1,27 @@
 import Countries from '../components/Countries';
+import Layout from '../components/Layout';
 
 export default function HomePage({ countries }) {
   console.log(countries);
   return (
-    <div className='container'>
-      <h1 className='text-5xl'>Countries In The World</h1>
-      <div className='grid'>
-        {countries.map((el) => (
-          <Countries
-            key={el.alpha2Code}
-            name={el.name}
-            capital={el.capital}
-            currency={el.currencies[0].name}
-            symbol={el.currencies[0].symbol}
-            flag={el.flag}
-            population={el.population}
-          />
-        ))}
+    <Layout title='KYC | Home'>
+      <div className='container'>
+        <h1 className='text-5xl'>Countries In The World</h1>
+        <div className='grid'>
+          {countries.map((el) => (
+            <Countries
+              key={el.alpha2Code}
+              name={el.name}
+              capital={el.capital}
+              currency={el.currencies[0].name}
+              symbol={el.currencies[0].symbol}
+              flag={el.flag}
+              population={el.population}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 
@@ -31,5 +34,6 @@ export async function getStaticProps() {
     props: {
       countries: data.slice(0, 12),
     },
+    revalidate: 60,
   };
 }

@@ -16,10 +16,50 @@ html {
   font-size: 62.5%;
 }
 
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  box-shadow: 0 4px 6px 3px rgba(22, 21, 21, 0.247);
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: steelblue;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  list-style: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  color: steelblue;
+}
+
+nav ul a:hover {
+  color: #1a1717;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2;
+  transition: 0.3s;
+  animation: moveIn 0.5s ease-in;
 }
 
 .flex {
@@ -54,4 +94,24 @@ html {
 
 .flex:hover {
   transform: translateY(-2px) scale(1.03);
+}
+
+@keyframes moveIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
